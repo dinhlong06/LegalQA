@@ -1,0 +1,35 @@
+# Deps cho rag_model/ — copy y hệt retrieval/requirements.txt (rag_model/retrieve/component/
+# vốn trích từ retrieval/fast_index.py + encoder.py nên cùng phụ thuộc), để rag_model/ tự đủ khi
+# mang đi nộp riêng, không cần kéo theo retrieval/.
+#
+# Ràng buộc bắt buộc, đừng nới (xem retrieval/requirements.txt / eval/requirements.lock.txt):
+#   transformers == 4.44.2: <4.43 thiếu EncoderDecoderCache mà FlagEmbedding 1.2.11 cần
+#   FlagEmbedding == 1.2.11: >=1.3 đòi transformers >=4.56
+#   torch >= 2.6: bge-m3 chỉ có pytorch_model.bin, transformers mới chặn torch.load cũ
+#   python == 3.11
+
+torch>=2.6.0
+transformers==4.44.2
+sentence-transformers==2.7.0
+FlagEmbedding==1.2.11
+peft==0.20.0
+
+# Ma trận thưa cho BM25 CSR + kênh sparse
+scipy>=1.10.0
+numpy>=1.24.0
+
+sentencepiece==0.2.2
+tqdm>=4.66.0
+
+# Cần cho AutoTokenizer convert tokenizer chậm -> nhanh của model gốc XLM-RoBERTa
+# (Vietnamese_Reranker, bge-m3, e5-large đều thuộc họ này) — thiếu sẽ raise ImportError
+# ngay khi LegalRetriever() khởi tạo reranker.
+protobuf
+
+# Chỉ cần cho rag_model/legalqa/evaluate.py (đo METEOR/ROUGE-L offline trên dev split) —
+# KHÔNG cần lúc predict/đóng gói submission (rag_model/legalqa/predict.py, package.py không
+# import nltk). rouge_score không liệt kê ở đây vì evaluate.py trỏ thẳng vào bản vendor
+# scoring/legalqa/rouge_score/, không qua pip — nhưng bản vendor đó tự import `absl` (thư
+# viện logging của Google) nên vẫn phải cài absl-py.
+nltk
+absl-py
