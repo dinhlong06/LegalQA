@@ -1,0 +1,1 @@
+{"max_steps": 152, "mini_batch_final": 4, "calib_time_s": 36.372720098495485, "elapsed_s": 5901.732613801956, "lora_used": false, "optim": "adamw_torch"}

@@ -1,0 +1,6 @@
+_staging/
+logs/
+output/
+__pycache__/
+*.pyc
+.git/

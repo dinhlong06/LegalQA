@@ -1,0 +1,22 @@
+# Cấu hình v11 — arm FULL (PRIMARY). Nguồn: training_logs/v8_decisions.json (Kaggle 19/09/2026)
+#   retrieval=base · t2=base · gen=free_plus_verbatim · template=T3_theo_qd_tai_title
+#   gate_ce_reranker: legal-VN Δ −0,0407 (z 4,97) -> trượt, giữ Vietnamese_Reranker zero-shot
+# Private đã nộp: 0,6047 (submission_v11_private.zip = submission.json trong v11_results.zip).
+answer_template: T3_theo_qd_tai_title
+concl: echo2
+doc_k: 5
+max_dieu_candidates: 100
+top_k_retrieve: 100
+top_k_rerank: 5
+dense_max_seq_len: 256
+rerank_subbatch: 64
+base_dense_model_a: AITeamVN/Vietnamese_Embedding_v2
+base_dense_model_b: mainguyen9/vietlegal-harrier-0.6b
+reranker_base: AITeamVN/Vietnamese_Reranker
+use_reranker_finetune: false
+use_llm: true
+llm_model: Qwen/Qwen3-1.7B
+llm_gen_batch: 8
+llm_max_new_free: 768
+seed: 42
+reference: submission_v11_private.zip

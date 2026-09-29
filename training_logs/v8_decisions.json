@@ -1,0 +1,378 @@
+{
+  "llm": {
+    "requested": true,
+    "model": "Qwen/Qwen3-1.7B",
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "dtype": {
+      "cuda:0": "torch.float16",
+      "cuda:1": "torch.float16"
+    },
+    "error": null,
+    "registered": true,
+    "adapter": null,
+    "n_params": 1720574976
+  },
+  "ce_meteor_ft": {
+    "used": false,
+    "reason": null,
+    "ckpt": null,
+    "meta": null
+  },
+  "llm_lora": {
+    "used": false,
+    "reason": null,
+    "adapter": null,
+    "meta": null
+  },
+  "labels": {
+    "n_q": 0,
+    "n_pairs": 0,
+    "n_groups": 0,
+    "n_gen": 0,
+    "n_list": 0,
+    "elapsed_s": null,
+    "stop": null
+  },
+  "gate_retrieval": {
+    "base": "base",
+    "candidates": {},
+    "winner": "base"
+  },
+  "gate_retrieval_final": {
+    "base": "base",
+    "candidates": {},
+    "winner": "base"
+  },
+  "gate_retrieval_final_nollm": {
+    "base": "base",
+    "candidates": {},
+    "winner": "base"
+  },
+  "retrieval_arms": {
+    "base": {
+      "w": {},
+      "kb": null,
+      "prf": null,
+      "rw": null
+    }
+  },
+  "gate_t2": {
+    "base": "base",
+    "candidates": {},
+    "winner": "base"
+  },
+  "gate_t2_nollm": {
+    "base": "base",
+    "candidates": {},
+    "winner": "base"
+  },
+  "gate_template": {
+    "base": "T3_theo_qd_tai_title",
+    "candidates": {
+      "T0_current": {
+        "half_a": {
+          "n": 150,
+          "delta": -0.00482,
+          "se": 0.00074,
+          "win": 52,
+          "loss": 95
+        },
+        "half_b": {
+          "n": 150,
+          "delta": -0.00387,
+          "se": 0.00065,
+          "win": 52,
+          "loss": 92
+        },
+        "all": {
+          "n": 300,
+          "delta": -0.00434,
+          "se": 0.00049,
+          "win": 104,
+          "loss": 187
+        },
+        "z": 8.86,
+        "pass": false
+      },
+      "T1_theo_qd_tai": {
+        "half_a": {
+          "n": 150,
+          "delta": -0.00371,
+          "se": 0.00067,
+          "win": 47,
+          "loss": 82
+        },
+        "half_b": {
+          "n": 150,
+          "delta": -0.00309,
+          "se": 0.00061,
+          "win": 50,
+          "loss": 82
+        },
+        "all": {
+          "n": 300,
+          "delta": -0.0034,
+          "se": 0.00045,
+          "win": 97,
+          "loss": 164
+        },
+        "z": 7.56,
+        "pass": false
+      },
+      "T2_title": {
+        "half_a": {
+          "n": 150,
+          "delta": -0.00156,
+          "se": 0.00028,
+          "win": 68,
+          "loss": 79
+        },
+        "half_b": {
+          "n": 150,
+          "delta": -0.00113,
+          "se": 0.00024,
+          "win": 71,
+          "loss": 73
+        },
+        "all": {
+          "n": 300,
+          "delta": -0.00135,
+          "se": 0.00019,
+          "win": 139,
+          "loss": 152
+        },
+        "z": 7.11,
+        "pass": false
+      }
+    },
+    "winner": "T3_theo_qd_tai_title"
+  },
+  "gate_gen": {
+    "base": "base",
+    "candidates": {
+      "concl_replace": {
+        "half_a": {
+          "n": 150,
+          "delta": -0.0099,
+          "se": 0.0039,
+          "win": 45,
+          "loss": 84
+        },
+        "half_b": {
+          "n": 150,
+          "delta": -0.01164,
+          "se": 0.0042,
+          "win": 44,
+          "loss": 85
+        },
+        "all": {
+          "n": 300,
+          "delta": -0.01077,
+          "se": 0.00286,
+          "win": 89,
+          "loss": 169
+        },
+        "z": 3.77,
+        "pass": false
+      },
+      "concl_plus_echo2": {
+        "half_a": {
+          "n": 150,
+          "delta": 0.00708,
+          "se": 0.00358,
+          "win": 71,
+          "loss": 58
+        },
+        "half_b": {
+          "n": 150,
+          "delta": 0.00384,
+          "se": 0.00396,
+          "win": 69,
+          "loss": 60
+        },
+        "all": {
+          "n": 300,
+          "delta": 0.00546,
+          "se": 0.00267,
+          "win": 140,
+          "loss": 118
+        },
+        "z": 2.04,
+        "pass": true
+      },
+      "free": {
+        "half_a": {
+          "n": 150,
+          "delta": -0.25127,
+          "se": 0.01591,
+          "win": 8,
+          "loss": 139
+        },
+        "half_b": {
+          "n": 150,
+          "delta": -0.24584,
+          "se": 0.01548,
+          "win": 8,
+          "loss": 141
+        },
+        "all": {
+          "n": 300,
+          "delta": -0.24855,
+          "se": 0.01108,
+          "win": 16,
+          "loss": 280
+        },
+        "z": 22.43,
+        "pass": false
+      },
+      "free_plus_verbatim": {
+        "half_a": {
+          "n": 150,
+          "delta": 0.02972,
+          "se": 0.00571,
+          "win": 86,
+          "loss": 61
+        },
+        "half_b": {
+          "n": 150,
+          "delta": 0.02881,
+          "se": 0.00604,
+          "win": 78,
+          "loss": 71
+        },
+        "all": {
+          "n": 300,
+          "delta": 0.02926,
+          "se": 0.00415,
+          "win": 164,
+          "loss": 132
+        },
+        "z": 7.05,
+        "pass": true
+      }
+    },
+    "winner": "free_plus_verbatim",
+    "n_fallback": {
+      "concl_replace": 20,
+      "concl_plus_echo2": 20,
+      "free": 4,
+      "free_plus_verbatim": 4
+    }
+  },
+  "gate_full_vs_nollm": {
+    "half_a": {
+      "n": 150,
+      "delta": 0.02824,
+      "se": 0.00606,
+      "win": 85,
+      "loss": 62
+    },
+    "half_b": {
+      "n": 150,
+      "delta": 0.01991,
+      "se": 0.007,
+      "win": 80,
+      "loss": 69
+    },
+    "all": {
+      "n": 300,
+      "delta": 0.02408,
+      "se": 0.00463,
+      "win": 165,
+      "loss": 131
+    },
+    "z": 5.2,
+    "pass": true
+  },
+  "subspan": {
+    "pool_size_mean": 5.0,
+    "oracle_top5_dieu": 0.6391,
+    "oracle_pool": 0.6391,
+    "lowm_thresh": 2.3609,
+    "picked_subspan_pct_full": 0.0,
+    "picked_subspan_pct_nollm": 0.0
+  },
+  "doc_recall_at_doc_k": {
+    "base": 0.8881
+  },
+  "timing_min": {
+    "gate_ce_reranker": 27.1,
+    "gate_r_round1": 32.5,
+    "gate_t2": 0.0,
+    "gate_gen": 19.6,
+    "gen_per_q_sec": 3.91
+  },
+  "gate_ce_reranker": {
+    "half_a": {
+      "n": 150,
+      "delta": -0.04244,
+      "se": 0.01169,
+      "win": 25,
+      "loss": 49
+    },
+    "half_b": {
+      "n": 150,
+      "delta": -0.03902,
+      "se": 0.01152,
+      "win": 27,
+      "loss": 43
+    },
+    "all": {
+      "n": 300,
+      "delta": -0.04073,
+      "se": 0.00819,
+      "win": 52,
+      "loss": 92
+    },
+    "z": 4.97,
+    "pass": false,
+    "base": "AITeamVN/Vietnamese_Reranker",
+    "candidate": "kiencnt2205/vietnamese-legal-reranker-bge-base"
+  },
+  "n_params": {
+    "encoders": 1163804672,
+    "reranker": 567755777,
+    "reranker_meteor_ft": 0,
+    "llm": 1720574976,
+    "ceft_with_llm_ok": true
+  },
+  "active": {
+    "full": {
+      "retrieval": "base",
+      "t2": "base",
+      "gen": "free_plus_verbatim",
+      "uses_llm": true,
+      "uses_lora": false,
+      "uses_ce_meteor": false
+    },
+    "nollm": {
+      "retrieval": "base",
+      "t2": "base",
+      "gen": "base",
+      "uses_llm": false,
+      "uses_ce_meteor": false
+    },
+    "template": "T3_theo_qd_tai_title",
+    "channels": [
+      "bm25",
+      "A",
+      "B"
+    ]
+  },
+  "dev_final": {
+    "full": {
+      "meteor": 0.5995,
+      "rouge_l": 0.5092
+    },
+    "nollm": {
+      "meteor": 0.5755,
+      "rouge_l": 0.5632
+    },
+    "base": {
+      "meteor": 0.5755
+    }
+  }
+}
