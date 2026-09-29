@@ -4,7 +4,8 @@ Self-contained package: MIT-licensed inference pipeline (chunk corpus → two-ti
 cross-encoder rerank → article selection → template answer + LLM opening), fine-tuned checkpoints,
 pre-built indexes, and training logs.
 
-**Reproduced submission: `submission_v11_private.zip` — private METEOR 0,6047** (1,918 questions).
+**Reproduced submission: `submission_v11_private.zip` — private METEOR 0,6047 / ROUGE-L 0,5167,
+#11 on the private leaderboard** (1,918 questions).
 
 ## Result
 
@@ -13,7 +14,7 @@ Task 2 is scored by **METEOR (`alpha = 0.9`, recall-heavy)** with ROUGE-L as the
 | split | system | METEOR | ROUGE-L |
 |---|---|---:|---:|
 | public test | v7, arm `full` (same architecture) | 0,5932 | 0,4732 |
-| private test | **this package (v11), arm `full`** | **0,6047** | — |
+| private test | **this package (v11), arm `full`** — **#11 on the official leaderboard** | **0,6047** | 0,5167 |
 
 - Two arms share the same retrieval/reranker/template and differ only in one place: arm `full` lets
   Qwen3-1.7B write an opening paragraph (`free_plus_verbatim`) before the template body. METEOR is
@@ -23,8 +24,9 @@ Task 2 is scored by **METEOR (`alpha = 0.9`, recall-heavy)** with ROUGE-L as the
   faithful extraction beats short generation — the pipeline follows the length/shape statistics of
   the `train.json` reference answers.
 
-**Model weights (Google Drive):** TBD — `legalqa_v11_models.zip` (~8.6 GB), contents pinned by
-[`SHA256SUMS`](SHA256SUMS).
+**Model weights (Google Drive):** https://drive.google.com/file/d/1q8oKzywcJQbNIK4e0b7P9-a0EFJj131U/view?usp=sharing
+(`legalqa_v11_models.zip`, ~8.6 GB — the 4 checkpoints + pre-built indexes of the layout table in
+§5, matching `models/` + `index/` byte for byte; verify against [`SHA256SUMS`](SHA256SUMS)).
 
 ---
 
