@@ -5,7 +5,7 @@ cross-encoder rerank → article selection → template answer + LLM opening), f
 pre-built indexes, and training logs.
 
 **Reproduced submission: `submission_v11_private.zip` — private METEOR 0,6047 / ROUGE-L 0,5167,
-#11 on the private leaderboard** (1,918 questions).
+#11 on the private leaderboard** (1,918 questions). **#10 on the public leaderboard** (0,5932).
 
 ## Result
 
@@ -13,7 +13,7 @@ Task 2 is scored by **METEOR (`alpha = 0.9`, recall-heavy)** with ROUGE-L as the
 
 | split | system | METEOR | ROUGE-L |
 |---|---|---:|---:|
-| public test | v7, arm `full` (same architecture) | 0,5932 | 0,4732 |
+| public test | v7, arm `full` (same architecture) — **#10 on the official leaderboard** | 0,5932 | 0,4732 |
 | private test | **this package (v11), arm `full`** — **#11 on the official leaderboard** | **0,6047** | 0,5167 |
 
 - Two arms share the same retrieval/reranker/template and differ only in one place: arm `full` lets
